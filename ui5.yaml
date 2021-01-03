@@ -1,0 +1,4 @@
+specVersion: '2.2'
+metadata:
+  name: Ui5-Demo-app
+type: application
