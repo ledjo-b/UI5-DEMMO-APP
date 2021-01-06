@@ -50,6 +50,10 @@
 					],
 					"fallbackLocale": ""
 				}
+			},
+			"invoice":{
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "invoices.json"
 			}
 		},
 		"resources": {
