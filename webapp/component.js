@@ -2,10 +2,10 @@ sap.ui.define([
 
     "sap/ui/core/UIComponent",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/model/resource/ResourceModel",
-    "./controller/HelloDialog"
+    "./controller/HelloDialog",
+    "sap/ui/model/resource/ResourceModel"
 
-], function(UIComponent, JSONModel, ResourceModel, HelloDialog) {
+], function(UIComponent, JSONModel, HelloDialog, ResourceModel) {
     "use strict";
     return UIComponent.extend("sap.ui.demo.walkthrough.component", {
         metadata:{
@@ -14,6 +14,7 @@ sap.ui.define([
         init: function(){
             // Call the init function of the parent
             UIComponent.prototype.init.apply(this, arguments);
+            console.log(this);
             // set data models
             const oData = {
                 recipient: {
