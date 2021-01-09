@@ -10,6 +10,12 @@ sap.ui.define([
     return Controller.extend("sap.ui.demo.walkthrough.controller.InvoiceList", {
         formatter: formatter,
         onInit: function () {
+
+            // testing // access OData model declared in manifest.json file
+            var oModel = this.getOwnerComponent().getModel("invoice");
+            console.log(oModel.oData);
+            // End of test
+
             const oViewModel = new JSONModel({
                 currency: "EUR"
             });
