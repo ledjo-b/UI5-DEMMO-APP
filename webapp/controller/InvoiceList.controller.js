@@ -26,6 +26,7 @@ sap.ui.define([
             //Build the filter array
             let aFilter = [];
             const sQuery = oEvent.getParameter("query");
+            console.log(sQuery);
             if (sQuery) {
                 aFilter.push(new Filter("ProductName", FilterOperator.Contains, sQuery));
             }

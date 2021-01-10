@@ -1,40 +1,42 @@
 sap.ui.define([
+	"sap/ui/core/UIComponent",
+	"sap/ui/model/json/JSONModel",
+	"./controller/HelloDialog"
+], function (UIComponent, JSONModel, HelloDialog) {
+	"use strict";
 
-    "sap/ui/core/UIComponent",
-    "sap/ui/model/json/JSONModel",
-    "./controller/HelloDialog",
-    "sap/ui/model/resource/ResourceModel"
+	return UIComponent.extend("sap.ui.demo.walkthrough.Component", {
 
-], function(UIComponent, JSONModel, HelloDialog, ResourceModel) {
-    "use strict";
-    return UIComponent.extend("sap.ui.demo.walkthrough.component", {
-        metadata:{
-            manifest:"json"
-        },
-        init: function(){
-            // Call the init function of the parent
-            UIComponent.prototype.init.apply(this, arguments);
-            console.log(this);
-            // set data models
-            const oData = {
-                recipient: {
-                    name: "Sap Ui5"
-                }
-            };
-            const oModel = new JSONModel(oData);
-            this.setModel(oModel);
+		metadata: {
+			manifest: "json"
+		},
 
-            //Set dialog
-            this._helloDialog = new HelloDialog(this.getRootControl());
-        },
+		init: function () {
+			// call the init function of the parent
+			UIComponent.prototype.init.apply(this, arguments);
 
-        exit: function () {
-            this._HelloDialog.destroy();
-            delete this._HelloDialog;
-        },
+			// set data model
+			var oData = {
+				recipient: {
+					name: "World"
+				}
+			};
+			var oModel = new JSONModel(oData);
+			this.setModel(oModel);
 
-        openHelloDialog : function () {
-            this._helloDialog.open();
-        }
-    })
-})
+			// set dialog
+			this._helloDialog = new HelloDialog(this.getRootControl());
+		},
+
+		exit : function () {
+			this._helloDialog.destroy();
+			delete this._helloDialog;
+		},
+
+		openHelloDialog : function () {
+			this._helloDialog.open();
+		}
+
+	});
+
+});
