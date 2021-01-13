@@ -46,6 +46,10 @@
 				"sap.m": {}
 			}
 		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
 		"config": {
 			"invoiceLocal": "/Invoices.json"
 		},
